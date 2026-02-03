@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-neutral-600 bg-neutral-100 antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold text-neutral-900 tracking-tight;
+  }
+
+  /* Base responsive image behavior */
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+}
+
+/* Component styles */
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-5 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-neutral-900 mb-4 leading-tight tracking-tight;
+  }
+  
+  .section-subtitle {
+    @apply text-base md:text-lg text-neutral-500 max-w-xl leading-relaxed;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-7 py-3.5 text-sm font-semibold text-white bg-neutral-900 rounded-full 
+           hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-900 
+           transition-all duration-300 ease-out transform hover:scale-[1.02] active:scale-[0.98]
+           shadow-lg shadow-neutral-900/20 hover:shadow-xl hover:shadow-neutral-900/25;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-7 py-3.5 text-sm font-semibold text-neutral-900 bg-neutral-50 
+           border border-neutral-200 rounded-full hover:bg-neutral-100 hover:border-neutral-300
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-900 
+           transition-all duration-300 ease-out transform hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-secondary-blue {
+    @apply inline-flex items-center justify-center px-7 py-3.5 text-sm font-semibold text-white bg-blue-500 border-blue-500 hover:bg-blue-600 hover:border-blue-600 text-base px-8 py-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 active:scale-[0.98] transition-all duration-300 ease-out transform hover:scale-[1.02] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 rounded-full;
+  }
+  
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-7 py-3.5 text-sm font-semibold text-white bg-emerald-600 rounded-full 
+           hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 
+           transition-all duration-300 ease-out transform hover:scale-[1.02] active:scale-[0.98]
+           shadow-lg shadow-emerald-600/25 hover:shadow-xl hover:shadow-emerald-600/30;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl p-7 md:p-8 transition-all duration-300 
+           border border-neutral-200 hover:border-neutral-300 hover:shadow-xl hover:shadow-neutral-900/5;
+  }
+  
+  .card-elevated {
+    @apply bg-white rounded-2xl p-7 md:p-8 transition-all duration-300 
+           shadow-lg shadow-neutral-900/5 hover:shadow-xl hover:shadow-neutral-900/10 hover:-translate-y-1;
+  }
+  
+  /* Icon container */
+  .icon-container {
+    @apply w-12 h-12 rounded-xl bg-neutral-200 flex items-center justify-center text-neutral-700
+           transition-all duration-300 group-hover:bg-neutral-900 group-hover:text-white;
+  }
+  
+  .icon-container-accent {
+    @apply w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600
+           transition-all duration-300 group-hover:bg-emerald-600 group-hover:text-white;
+  }
+
+  /* Responsive images - content images scale with container */
+  .img-responsive {
+    @apply max-w-full h-auto align-middle;
+  }
+
+  /* Full-bleed cover images (hero/background) - fill container, no max-width limit */
+  .img-cover {
+    @apply w-full h-full min-h-full object-cover object-center;
+    max-width: none;
+  }
+
+  /* Avatar / fixed-aspect images - prevent squish in flex */
+  .img-avatar {
+    @apply rounded-full object-cover flex-shrink-0;
+  }
+}
+
+/* Animation utilities */
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 bg-clip-text text-transparent;
+  }
+}
+
+/* Selection color */
+::selection {
+  @apply bg-neutral-200 text-neutral-900;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-400;
+}
