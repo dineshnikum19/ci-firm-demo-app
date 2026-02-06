@@ -1,4 +1,4 @@
-# Shah & Associates - CA Firm Website
+# XYZ & Associates - CA Firm Website
 
 A modern, professional, trust-focused website for a Chartered Accountant firm based in Ahmedabad, Gujarat.
 

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send, CheckCircle2 } from 'lucide-react'
+import AnimatedSection from '../components/AnimatedSection'
 
 /**
  * Contact Page - Clean, Premium Design
@@ -25,7 +26,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: Phone, label: 'Phone', value: '+91 98765 43210', href: 'tel:+919876543210' },
-    { icon: Mail, label: 'Email', value: 'info@shahassociates.com', href: 'mailto:info@shahassociates.com' },
+    { icon: Mail, label: 'Email', value: 'info@xyzassociates.com', href: 'mailto:info@xyzassociates.com' },
     { icon: MessageCircle, label: 'WhatsApp', value: '+91 98765 43210', href: 'https://wa.me/919876543210' },
     { icon: MapPin, label: 'Office', value: 'CG Road, Ahmedabad 380009', href: 'https://maps.google.com' },
   ]
@@ -35,7 +36,7 @@ const Contact = () => {
   return (
     <div className="pt-20">
       {/* Hero with Background */}
-      <section className="relative py-24 md:py-32 overflow-hidden min-h-[300px] sm:min-h-[360px]">
+      <AnimatedSection animation="fadeIn" className="relative py-24 md:py-32 overflow-hidden min-h-[300px] sm:min-h-[360px]">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=1170&auto=format&fit=crop"
@@ -47,7 +48,7 @@ const Contact = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent"></div>
         </div>
         
-        <div className="container-custom relative z-10">
+        <AnimatedSection animation="fadeUp" delay={200} className="container-custom relative z-10">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-4">Contact</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight">
@@ -57,38 +58,43 @@ const Contact = () => {
               Have questions? We're here to help. Reach out through any channel.
             </p>
           </div>
-        </div>
-      </section>
+        </AnimatedSection>
+      </AnimatedSection>
 
       {/* Contact Cards */}
-      <section className="pt-28">
+      <AnimatedSection animation="fadeUp" className="pt-28">
         <div className="container-custom">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {contactInfo.map((item, index) => (
-              <a
+              <AnimatedSection
                 key={index}
-                href={item.href}
-                target={item.label === 'WhatsApp' ? '_blank' : undefined}
-                rel={item.label === 'WhatsApp' ? 'noopener noreferrer' : undefined}
-                className="card group text-center hover:border-neutral-200"
+                animation="fadeUp"
+                delay={index * 100}
               >
+                <a
+                  href={item.href}
+                  target={item.label === 'WhatsApp' ? '_blank' : undefined}
+                  rel={item.label === 'WhatsApp' ? 'noopener noreferrer' : undefined}
+                  className="card group text-center hover:border-neutral-200"
+                >
                 <div className="w-12 h-12 rounded-xl bg-neutral-200 flex items-center justify-center mx-auto mb-4 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
                   <item.icon size={20} />
                 </div>
                 <p className="text-xs text-neutral-500 mb-1">{item.label}</p>
                 <p className="font-medium text-neutral-900 text-sm">{item.value}</p>
               </a>
+              </AnimatedSection>
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Form Section */}
-      <section className="section-padding bg-neutral-100">
+      <AnimatedSection animation="fadeUp" className="section-padding bg-neutral-100">
         <div className="container-custom">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Form */}
-            <div className="lg:col-span-3">
+            <AnimatedSection animation="slideRight" delay={100} className="lg:col-span-3">
               <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">Get in Touch</p>
               <h2 className="section-title mb-8">Send us a message</h2>
 
@@ -170,10 +176,10 @@ const Contact = () => {
                   </button>
                 </form>
               )}
-            </div>
+            </AnimatedSection>
 
             {/* Office Info */}
-            <div className="lg:col-span-2">
+            <AnimatedSection animation="slideLeft" delay={200} className="lg:col-span-2">
               <div className="bg-white rounded-2xl border border-neutral-200 p-6 md:p-8 sticky top-28">
                 <h3 className="font-semibold text-neutral-900 mb-6">Office Information</h3>
                 
@@ -208,13 +214,13 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Map with Overlay */}
-      <section className="relative h-64 sm:h-80 w-full overflow-hidden">
+      <AnimatedSection animation="fadeUp" className="relative h-64 sm:h-80 w-full overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1920&q=80"
           alt="Ahmedabad city"
@@ -236,7 +242,7 @@ const Contact = () => {
             </a>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </div>
   )
 }

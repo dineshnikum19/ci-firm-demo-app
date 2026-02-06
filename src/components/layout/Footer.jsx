@@ -32,7 +32,7 @@ const Footer = () => {
               <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
                 <span className="text-neutral-900 font-bold text-lg">S</span>
               </div>
-              <span className="font-bold text-white text-lg">Shah & Associates</span>
+              <span className="font-bold text-white text-lg">XYZ & Associates</span>
             </Link>
             <p className="text-neutral-400 text-sm leading-relaxed mb-6">
               Trusted CA firm in Ahmedabad serving businesses since 2005.
@@ -89,9 +89,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@shahassociates.com" className="flex items-center gap-3 text-neutral-400 hover:text-white text-sm transition-colors">
+                <a href="mailto:info@xyzassociates.com" className="flex items-center gap-3 text-neutral-400 hover:text-white text-sm transition-colors">
                   <Mail size={16} />
-                  info@shahassociates.com
+                  info@xyzassociates.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-neutral-400 text-sm">
@@ -107,7 +107,7 @@ const Footer = () => {
       <div className="border-t border-neutral-800">
         <div className="container-custom py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-neutral-500 text-sm">
-            © {currentYear} Shah & Associates. All rights reserved.
+            © {currentYear} XYZ & Associates. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-neutral-500 hover:text-white transition-colors">Privacy</a>

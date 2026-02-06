@@ -1,230 +1,244 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  Trophy,
-  Users,
-  ShieldCheck,
+  GraduationCap,
   Clock,
-  Headphones,
-  Laptop,
+  Heart,
+  MessageSquare,
+  ShieldCheck,
+  Layers,
+  Lock,
+  Lightbulb,
   CheckCircle2,
-  Star,
-  Zap,
-} from 'lucide-react'
+  Phone,
+} from "lucide-react";
+import AnimatedSection from "../components/AnimatedSection";
 
 /**
- * Why Choose Us Page - Clean, Premium Design
+ * Why Choose Us Page - Modern, Professional CA/Financial Services
+ * Builds trust and credibility with clear differentiators and strong CTAs
  */
 const WhyChooseUs = () => {
-  const differentiators = [
-    { icon: Trophy, title: '20+ Years', desc: 'Trusted expertise since 2005', highlight: 'Experience' },
-    { icon: Users, title: '15+ Experts', desc: 'Qualified CA professionals', highlight: 'Team' },
-    { icon: ShieldCheck, title: '100% Compliance', desc: 'Zero default history', highlight: 'Reliability' },
-    { icon: Clock, title: 'On-Time', desc: 'Guaranteed timely delivery', highlight: 'Delivery' },
-    { icon: Headphones, title: '24/7 Support', desc: 'Always here when you need', highlight: 'Support' },
-    { icon: Laptop, title: 'Digital First', desc: 'Paperless, secure processes', highlight: 'Modern' },
-  ]
-
-  const comparison = [
-    { feature: 'Experienced CA Team', us: true, others: false },
-    { feature: 'Dedicated Manager', us: true, others: false },
-    { feature: 'Digital Documents', us: true, others: false },
-    { feature: 'Proactive Tax Planning', us: true, others: false },
-    { feature: '24/7 Support', us: true, others: false },
-    { feature: 'Transparent Pricing', us: true, others: false },
-  ]
-
-  const testimonials = [
-    { 
-      quote: 'Their proactive tax planning saved us significantly.', 
-      author: 'Vikram Patel', 
-      role: 'CEO, Patel Exports',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face'
+  const reasons = [
+    {
+      icon: GraduationCap,
+      title: "Experienced & Qualified Professionals",
+      description:
+        "Our team includes qualified Chartered Accountants and finance professionals with decades of combined experience. We stay updated with changing laws and regulations so you get advice that is both accurate and practical.",
     },
-    { 
-      quote: 'Incredibly responsive and knowledgeable team.', 
-      author: 'Anita Desai', 
-      role: 'CFO, Desai Manufacturing',
-      image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&h=150&fit=crop&crop=face'
+    {
+      icon: Clock,
+      title: "Accurate & Timely Service",
+      description:
+        "We understand that deadlines matter. Whether it's tax filing, GST returns, or compliance submissions, we deliver accurate work on time—every time. Our process is designed to avoid last-minute rushes and costly penalties.",
     },
-  ]
+    {
+      icon: Heart,
+      title: "Client-Focused Approach",
+      description:
+        "Your success is at the centre of what we do. We take time to understand your business, your goals, and your challenges. Our solutions are tailored to your needs, not a one-size-fits-all template.",
+    },
+    {
+      icon: MessageSquare,
+      title: "Transparent Communication",
+      description:
+        "No hidden terms, no confusing jargon. We explain everything in plain language so you know exactly what we're doing and why. You'll always know the status of your work and what to expect next.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Strong Compliance & Ethical Standards",
+      description:
+        "We follow the highest professional and ethical standards. All our work adheres to applicable laws and regulations. You can trust that your financial matters are handled with integrity and in full compliance.",
+    },
+    {
+      icon: Layers,
+      title: "End-to-End Financial Solutions",
+      description:
+        "From tax and GST to audit, accounting, and compliance—we offer a full range of services under one roof. No need to juggle multiple advisors. We coordinate everything so your financial affairs stay streamlined.",
+    },
+    {
+      icon: Lock,
+      title: "Data Confidentiality & Security",
+      description:
+        "Your financial data is sensitive, and we treat it that way. We use secure systems, follow strict confidentiality protocols, and never share your information without your consent. Your privacy is our priority.",
+    },
+    {
+      icon: Lightbulb,
+      title: "Practical, Business-Focused Advice",
+      description:
+        "We don't just crunch numbers—we help you make better business decisions. Our advice is practical, actionable, and aligned with your growth goals. We focus on what works for your business in the real world.",
+    },
+  ];
+
+  const commitmentPoints = [
+    "Timely filing and submissions—no missed deadlines",
+    "Accuracy in every calculation and report",
+    "Transparent pricing with no hidden charges",
+    "Clear, jargon-free communication",
+    "Confidential and secure handling of your data",
+  ];
 
   return (
     <div className="pt-20">
-      {/* Hero with Background */}
-      <section className="relative py-24 md:py-32 overflow-hidden min-h-[300px] sm:min-h-[360px]">
+      {/* Hero Section */}
+      <AnimatedSection animation="fadeIn" className="relative py-24 md:py-32 overflow-hidden min-h-[300px] sm:min-h-[360px]">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80"
-            alt="Business consultation"
+            src="/audit-compliance.jpg"
+            alt="Professional financial advisory"
             className="img-cover"
             fetchPriority="high"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/40 to-transparent" />
         </div>
-        
-        <div className="container-custom relative z-10">
+
+        <AnimatedSection animation="fadeUp" delay={200} className="container-custom relative z-10">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-4">Why Choose Us</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight mb-6">
-              Your success is our commitment
-            </h1>
-            <p className="text-lg text-neutral-800 leading-relaxed">
-              Discover why thousands of businesses trust us for their financial needs.
+            <AnimatedSection animation="fadeUp" delay={300}>
+              <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-4">
+                Why Choose Us
+              </p>
+            </AnimatedSection>
+            <AnimatedSection animation="fadeUp" delay={400}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight mb-6">
+                Trusted expertise. Clear values. Real results.
+              </h1>
+            </AnimatedSection>
+            <AnimatedSection animation="fadeUp" delay={500}>
+              <p className="text-lg text-neutral-900 leading-relaxed">
+                Find out why thousands of businesses, startups, and professionals
+                choose XYZ & Associates for their financial needs.
+              </p>
+            </AnimatedSection>
+          </div>
+        </AnimatedSection>
+      </AnimatedSection>
+
+      {/* Introduction */}
+      <AnimatedSection animation="fadeUp" className="py-20 bg-white">
+        <div className="container-custom">
+          <div className="max-w-3xl">
+            <p className="text-neutral-600 text-lg leading-relaxed">
+              At XYZ & Associates, we believe that great financial services go
+              beyond paperwork and compliance. We focus on building long-term
+              relationships with our clients by providing expert advice,
+              reliable support, and a commitment to excellence. Whether you are
+              a small business owner, a startup founder, or an individual
+              professional, we tailor our services to your needs and help you
+              navigate the complex world of taxes, audits, and compliance with
+              confidence.
             </p>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* Differentiators */}
-      <section className="section-padding">
+      {/* Key Reasons - Card Grid */}
+      <AnimatedSection animation="fadeUp" className="py-20 bg-neutral-200">
         <div className="container-custom">
-          <div className="text-center mb-14">
-            <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">Differentiators</p>
-            <h2 className="section-title">What sets us apart</h2>
-          </div>
+          <AnimatedSection animation="fadeUp" delay={100} className="text-center mb-14">
+            <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">
+              What Sets Us Apart
+            </p>
+            <h2 className="section-title">Eight reasons to work with us</h2>
+            <p className="section-subtitle mx-auto max-w-2xl">
+              We combine professional expertise with a client-first approach to
+              deliver services that make a real difference.
+            </p>
+          </AnimatedSection>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {differentiators.map((item, index) => (
-              <div key={index} className="card group">
-                <span className="inline-block px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-semibold mb-4">
-                  {item.highlight}
-                </span>
-                <div className="icon-container mb-4">
-                  <item.icon size={22} />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {reasons.map((item, index) => (
+              <AnimatedSection
+                key={index}
+                animation="fadeUp"
+                delay={200 + index * 100}
+                className="card group flex flex-col h-full bg-neutral-400 text-neutral-900"
+              >
+                <div className="icon-container-accent mb-5">
+                  <item.icon size={24} strokeWidth={1.5} />
                 </div>
-                <h3 className="font-semibold text-xl text-neutral-900 mb-2">{item.title}</h3>
-                <p className="text-neutral-500 text-sm">{item.desc}</p>
-              </div>
+                <h3 className="font-semibold text-lg text-neutral-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-neutral-600 text-sm leading-relaxed flex-grow">
+                  {item.description}
+                </p>
+              </AnimatedSection>
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* Stats */}
-      <section className="py-20 bg-neutral-900">
+      {/* Our Commitment */}
+      <AnimatedSection animation="scale" className="py-20">
         <div className="container-custom">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { value: '5000+', label: 'Happy Clients' },
-              { value: '50K+', label: 'Returns Filed' },
-              { value: '99%', label: 'Retention Rate' },
-              { value: '24hrs', label: 'Response Time' },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</p>
-                <p className="text-neutral-400 text-sm">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="text-center mb-14">
-            <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">Compare</p>
-            <h2 className="section-title">How we stand out</h2>
-          </div>
-
-          <div className="max-w-2xl mx-auto bg-white rounded-2xl border border-neutral-200 overflow-hidden">
-            <div className="grid grid-cols-3 bg-neutral-900 text-white p-4 font-semibold text-sm">
-              <div>Feature</div>
-              <div className="text-center">Us</div>
-              <div className="text-center">Others</div>
-            </div>
-            {comparison.map((row, index) => (
-              <div key={index} className={`grid grid-cols-3 p-4 text-sm ${index % 2 === 0 ? 'bg-neutral-100' : ''}`}>
-                <div className="text-neutral-700">{row.feature}</div>
-                <div className="text-center">
-                  <CheckCircle2 size={18} className="text-emerald-500 mx-auto" />
-                </div>
-                <div className="text-center text-neutral-400">—</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials with Images */}
-      <section className="bg-neutral-100">
-        <div className="container-custom">
-          <div className="text-center mb-14">
-            <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">Testimonials</p>
-            <h2 className="section-title">Client feedback</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {testimonials.map((item, index) => (
-              <div key={index} className="card-elevated">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-amber-400 fill-amber-400" />
-                  ))}
-                </div>
-                <p className="text-neutral-600 mb-6">"{item.quote}"</p>
-                <div className="flex items-center gap-4 pt-4 border-t border-neutral-100">
-                  <img
-                    src={item.image}
-                    alt={item.author}
-                    className="w-12 h-12 img-avatar"
-                    width={48}
-                    height={48}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div>
-                    <p className="font-semibold text-neutral-900">{item.author}</p>
-                    <p className="text-sm text-neutral-500">{item.role}</p>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-3xl p-10 md:p-14 lg:p-16">
+              <div className="flex flex-col md:flex-row md:items-start gap-10">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-500 flex items-center justify-center">
+                    <ShieldCheck size={32} className="text-white" />
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Guarantee */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto">
-            <div className="w-16 h-16 rounded-2xl bg-emerald-500 flex items-center justify-center mx-auto mb-6">
-              <Zap size={32} className="text-white" />
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Our Commitment</h2>
-            <p className="text-neutral-400 mb-8 max-w-xl mx-auto">
-              Timely filing, accurate calculations, complete transparency. 
-              We cover any penalties from our errors.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              {['Timely Filing', 'Accuracy Assured', 'Transparent Pricing'].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-white text-sm">
-                  <CheckCircle2 size={16} className="text-emerald-400" />
-                  {item}
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                    Our Commitment to You
+                  </h2>
+                  <p className="text-neutral-300 text-lg leading-relaxed mb-8">
+                    When you work with XYZ & Associates, you can expect timely
+                    filing, accurate calculations, and complete transparency. We
+                    stand behind our work: if an error on our part leads to a
+                    penalty, we take responsibility. Our promise is simple—we
+                    treat your financial matters with the same care and
+                    attention we would give our own.
+                  </p>
+                  <ul className="space-y-4">
+                    {commitmentPoints.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3 text-white">
+                        <CheckCircle2
+                          size={20}
+                          className="text-emerald-400 flex-shrink-0 mt-0.5"
+                        />
+                        <span className="text-neutral-200">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* CTA */}
-      <section className="pb-20 md:pb-28 bg-neutral-100">
-        <div className="container-custom text-center">
-          <h2 className="section-title mb-4">Experience the difference</h2>
-          <p className="section-subtitle mx-auto mb-8">
-            Join thousands of satisfied clients today.
-          </p>
-          <Link to="/contact" className="btn-primary">
-            Book Free Consultation
-            <ArrowRight className="ml-2" size={18} />
-          </Link>
+      {/* CTA Section */}
+      <AnimatedSection animation="fadeUp" className="section-padding bg-neutral-100">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="section-title">Talk to our experts</h2>
+            <p className="section-subtitle mx-auto mb-10">
+              Ready to experience the difference? Get in touch for a free
+              consultation. We're here to help you with tax, GST, audit,
+              accounting, and compliance—all under one roof.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact" className="btn-primary">
+                Get in Touch
+                <ArrowRight className="ml-2" size={18} />
+              </Link>
+              <a
+                href="tel:+919876543210"
+                className="btn-accent inline-flex items-center justify-center"
+              >
+                <Phone className="mr-2" size={18} />
+                Call Now
+              </a>
+            </div>
+          </div>
         </div>
-      </section>
+      </AnimatedSection>
     </div>
-  )
-}
+  );
+};
 
-export default WhyChooseUs
+export default WhyChooseUs;
