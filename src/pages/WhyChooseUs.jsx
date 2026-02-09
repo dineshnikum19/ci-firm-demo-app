@@ -79,21 +79,28 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero Section */}
-      <AnimatedSection animation="fadeIn" className="relative py-24 md:py-32 overflow-hidden min-h-[300px] sm:min-h-[360px]">
+      <AnimatedSection
+        animation="fadeIn"
+        className="relative py-24 md:py-32 overflow-hidden min-h-[300px] sm:min-h-[360px]"
+      >
         <div className="absolute inset-0">
           <img
             src="/audit-compliance.jpg"
             alt="Professional financial advisory"
             className="img-cover"
-            fetchPriority="high"
+            fetchpriority="high"
             decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/40 to-transparent" />
         </div>
 
-        <AnimatedSection animation="fadeUp" delay={200} className="container-custom relative z-10">
+        <AnimatedSection
+          animation="fadeUp"
+          delay={200}
+          className="container-custom relative z-10"
+        >
           <div className="max-w-2xl">
             <AnimatedSection animation="fadeUp" delay={300}>
               <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-4">
@@ -107,8 +114,8 @@ const WhyChooseUs = () => {
             </AnimatedSection>
             <AnimatedSection animation="fadeUp" delay={500}>
               <p className="text-lg text-neutral-900 leading-relaxed">
-                Find out why thousands of businesses, startups, and professionals
-                choose XYZ & Associates for their financial needs.
+                Find out why thousands of businesses, startups, and
+                professionals choose XYZ & Associates for their financial needs.
               </p>
             </AnimatedSection>
           </div>
@@ -136,7 +143,11 @@ const WhyChooseUs = () => {
       {/* Key Reasons - Card Grid */}
       <AnimatedSection animation="fadeUp" className="py-20 bg-neutral-200">
         <div className="container-custom">
-          <AnimatedSection animation="fadeUp" delay={100} className="text-center mb-14">
+          <AnimatedSection
+            animation="fadeUp"
+            delay={100}
+            className="text-center mb-14"
+          >
             <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">
               What Sets Us Apart
             </p>
@@ -212,7 +223,10 @@ const WhyChooseUs = () => {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection animation="fadeUp" className="section-padding bg-neutral-100">
+      <AnimatedSection
+        animation="fadeUp"
+        className="section-padding bg-neutral-100"
+      >
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="section-title">Talk to our experts</h2>

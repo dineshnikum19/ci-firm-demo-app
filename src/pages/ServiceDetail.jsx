@@ -15,17 +15,24 @@ const ServiceDetail = () => {
   }
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero: full width, taller height */}
-      <AnimatedSection animation="fadeIn" className="relative w-full h-[60vh] min-h-[360px] overflow-hidden">
+      <AnimatedSection
+        animation="fadeIn"
+        className="relative w-full h-[60vh] min-h-[360px] overflow-hidden"
+      >
         <img
           src={service.image}
           alt={service.title}
           className="absolute inset-0 w-full h-full object-cover"
-          fetchPriority="high"
+          fetchpriority="high"
         />
         <div className="absolute inset-0 bg-neutral-900/40" />
-        <AnimatedSection animation="fadeUp" delay={300} className="absolute inset-0 flex items-end">
+        <AnimatedSection
+          animation="fadeUp"
+          delay={300}
+          className="absolute inset-0 flex items-end"
+        >
           <div className="container-custom w-full pb-8 md:pb-10">
             <AnimatedSection animation="fadeUp" delay={400}>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-sm">
@@ -42,7 +49,10 @@ const ServiceDetail = () => {
       </AnimatedSection>
 
       {/* Content */}
-      <AnimatedSection animation="fadeUp" className="pt-8 md:pt-16 pb-16 md:pb-20">
+      <AnimatedSection
+        animation="fadeUp"
+        className="pt-8 md:pt-16 pb-16 md:pb-20"
+      >
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <AnimatedSection animation="slideRight" delay={100}>
@@ -63,7 +73,11 @@ const ServiceDetail = () => {
                 <ArrowRight className="ml-2" size={18} />
               </Link>
             </AnimatedSection>
-            <AnimatedSection animation="slideLeft" delay={200} className="bg-neutral-300 rounded-2xl p-8 border border-neutral-200">
+            <AnimatedSection
+              animation="slideLeft"
+              delay={200}
+              className="bg-neutral-300 rounded-2xl p-8 border border-neutral-200"
+            >
               <h2 className="font-semibold text-neutral-900 text-xl mb-6">
                 What&apos;s included
               </h2>

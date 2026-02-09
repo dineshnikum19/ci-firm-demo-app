@@ -49,21 +49,28 @@ const Services = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero with Background */}
-      <AnimatedSection animation="fadeIn" className="relative py-24 md:py-32 overflow-hidden min-h-[300px] sm:min-h-[360px]">
+      <AnimatedSection
+        animation="fadeIn"
+        className="relative py-24 md:py-32 overflow-hidden min-h-[300px] sm:min-h-[360px]"
+      >
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1920&q=80"
             alt="Financial documents"
             className="img-cover"
-            fetchPriority="high"
+            fetchpriority="high"
             decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/40 to-transparent"></div>
         </div>
 
-        <AnimatedSection animation="fadeUp" delay={200} className="container-custom relative z-10">
+        <AnimatedSection
+          animation="fadeUp"
+          delay={200}
+          className="container-custom relative z-10"
+        >
           <div className="max-w-2xl">
             <AnimatedSection animation="fadeUp" delay={300}>
               <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-4">
@@ -84,9 +91,17 @@ const Services = () => {
           </div>
 
           {/* Quick Links */}
-          <AnimatedSection animation="fadeUp" delay={600} className="flex flex-wrap gap-3 mt-10">
+          <AnimatedSection
+            animation="fadeUp"
+            delay={600}
+            className="flex flex-wrap gap-3 mt-10"
+          >
             {services.map((s, index) => (
-              <AnimatedSection key={s.slug} animation="scale" delay={700 + index * 50}>
+              <AnimatedSection
+                key={s.slug}
+                animation="scale"
+                delay={700 + index * 50}
+              >
                 <a
                   href={`#${s.slug}`}
                   className="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-neutral-200 text-sm font-medium text-neutral-700 hover:bg-white hover:border-neutral-300 transition-colors"
@@ -162,7 +177,11 @@ const Services = () => {
       {/* Process */}
       <AnimatedSection animation="fadeUp" className="bg-neutral-100">
         <div className="container-custom">
-          <AnimatedSection animation="fadeUp" delay={100} className="text-center mb-14">
+          <AnimatedSection
+            animation="fadeUp"
+            delay={100}
+            className="text-center mb-14"
+          >
             <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">
               Process
             </p>

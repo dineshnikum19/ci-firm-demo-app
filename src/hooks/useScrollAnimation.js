@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Performance-optimized scroll animation hook using Intersection Observer
@@ -29,8 +29,8 @@ export const useScrollAnimation = (options = {}) => {
       },
       {
         threshold: options.threshold || 0.1,
-        rootMargin: options.rootMargin || '0px 0px -50px 0px',
-      }
+        rootMargin: options.rootMargin || "0px 0px -50px 0px",
+      },
     );
 
     observer.observe(element);

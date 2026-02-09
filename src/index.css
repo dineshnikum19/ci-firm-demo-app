@@ -13,8 +13,6 @@
   body {
     @apply font-sans text-neutral-800 bg-neutral-100 antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-    /* Improve rendering performance */
-    transform: translateZ(0);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

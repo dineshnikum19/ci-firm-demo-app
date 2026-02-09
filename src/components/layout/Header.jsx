@@ -28,7 +28,7 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-neutral-100/95 backdrop-blur-xl shadow-sm border-b border-neutral-200"
-          : "bg-transparent"
+          : "bg-transparent shadow-none border-b border-transparent"
       }`}
     >
       <nav className="container-custom">
@@ -39,7 +39,7 @@ const Header = () => {
               <span className="text-white font-bold text-lg">S</span>
             </div>
             <div className="hidden sm:block">
-              <span className="font-bold text-neutral-900 text-lg">
+              <span className="font-bold text-white text-lg">
                 XYZ & Associates
               </span>
             </div>
@@ -55,7 +55,7 @@ const Header = () => {
                   `px-4 py-2 text-sm font-medium transition-colors rounded-full ${
                     isActive
                       ? "text-neutral-900 bg-neutral-400"
-                      : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-200"
+                      : "text-white hover:text-white hover:bg-neutral -200"
                   }`
                 }
               >

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useMemo } from "react";
 import {
   ArrowRight,
   Users,
@@ -14,67 +13,81 @@ import {
 import { services } from "../data/services";
 import AnimatedSection from "../components/AnimatedSection";
 
+// Move static data outside component to prevent recreation on re-renders
+const features = [
+  { icon: Trophy, title: "20+ Years", subtitle: "Experience" },
+  { icon: Users, title: "5000+", subtitle: "Happy Clients" },
+  { icon: TrendingUp, title: "99%", subtitle: "Retention Rate" },
+  { icon: ShieldCheck, title: "100%", subtitle: "Compliance" },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Professional team with excellent tax planning advice. Saved us significantly on taxes.",
+    author: "Rajesh Patel",
+    role: "MD, Patel Industries",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+  },
+  {
+    quote:
+      "Seamless company registration process. They handle all our compliance needs efficiently.",
+    author: "Priya Sharma",
+    role: "Founder, TechStart",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+  },
+  {
+    quote:
+      "Best CA firm in Ahmedabad. Always available and explain complex matters simply.",
+    author: "Amit Mehta",
+    role: "Mehta Textiles",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+  },
+];
+
 /**
  * Home Page - Modern, Premium Design
  */
 const Home = () => {
-  // Why choose us
-  const features = [
-    { icon: Trophy, title: "20+ Years", subtitle: "Experience" },
-    { icon: Users, title: "5000+", subtitle: "Happy Clients" },
-    { icon: TrendingUp, title: "99%", subtitle: "Retention Rate" },
-    { icon: ShieldCheck, title: "100%", subtitle: "Compliance" },
-  ];
-
-  // Testimonials with placeholder images
-  const testimonials = [
-    {
-      quote:
-        "Professional team with excellent tax planning advice. Saved us significantly on taxes.",
-      author: "Rajesh Patel",
-      role: "MD, Patel Industries",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    },
-    {
-      quote:
-        "Seamless company registration process. They handle all our compliance needs efficiently.",
-      author: "Priya Sharma",
-      role: "Founder, TechStart",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
-    },
-    {
-      quote:
-        "Best CA firm in Ahmedabad. Always available and explain complex matters simply.",
-      author: "Amit Mehta",
-      role: "Mehta Textiles",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    },
-  ];
-
   return (
-    <div className="pt-20">
+    <div>
       {/* ===== HERO SECTION - Same layout as About & Services ===== */}
-      <AnimatedSection animation="fadeIn" className="relative py-24 md:py-32 overflow-hidden min-h-[300px] sm:min-h-[360px]">
-        <div className="absolute inset-0">
+      <AnimatedSection
+        animation="fadeIn"
+        className="relative py-24 md:py-32 overflow-hidden min-h-[300px] sm:min-h-[360px]"
+      >
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Image */}
           <img
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920&auto=format&fit=crop"
             alt="Office meeting"
-            className="img-cover"
-            fetchPriority="high"
-            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover scale-105 brightness-110 contrast-105 saturate-110 blur-[1.5px]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/40 to-transparent"></div>
+
+          {/* Soft dark base layer */}
+          <div className="absolute inset-0 bg-black/25"></div>
+
+          {/* Professional left gradient for text */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent"></div>
         </div>
 
-        <AnimatedSection animation="fadeUp" delay={200} className="container-custom relative z-10">
+        <AnimatedSection
+          animation="fadeUp"
+          delay={200}
+          className="container-custom relative z-10"
+        >
           <div className="max-w-2xl">
-            <AnimatedSection animation="fadeUp" delay={300} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-neutral-200 shadow-sm mb-8">
+            <AnimatedSection
+              animation="fadeUp"
+              delay={300}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-neutral-200 shadow-sm mb-8"
+            >
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
               <span className="text-sm font-medium text-neutral-700">
                 Trusted Since 2005
@@ -96,7 +109,11 @@ const Home = () => {
               </p>
             </AnimatedSection>
 
-            <AnimatedSection animation="fadeUp" delay={600} className="flex flex-wrap gap-4">
+            <AnimatedSection
+              animation="fadeUp"
+              delay={600}
+              className="flex flex-wrap gap-4"
+            >
               <Link to="/contact" className="btn-primary">
                 Book Consultation
                 <ArrowRight className="ml-2" size={18} />
@@ -106,9 +123,18 @@ const Home = () => {
               </Link>
             </AnimatedSection>
 
-            <AnimatedSection animation="fadeUp" delay={700} className="flex flex-wrap items-center gap-8 mt-14 pt-8 border-t border-neutral-200">
+            <AnimatedSection
+              animation="fadeUp"
+              delay={700}
+              className="flex flex-wrap items-center gap-8 mt-14 pt-8 border-t border-neutral-200"
+            >
               {features.map((item, index) => (
-                <AnimatedSection key={index} animation="fadeUp" delay={800 + index * 100} className="flex items-center gap-3">
+                <AnimatedSection
+                  key={index}
+                  animation="fadeUp"
+                  delay={800 + index * 100}
+                  className="flex items-center gap-3"
+                >
                   <div className="w-10 h-10 rounded-lg bg-neutral-200 flex items-center justify-center">
                     <item.icon size={18} className="text-neutral-700" />
                   </div>
@@ -124,10 +150,17 @@ const Home = () => {
       </AnimatedSection>
 
       {/* ===== SERVICES SECTION ===== */}
-      <AnimatedSection animation="fadeUp" className="section-padding bg-neutral-100">
+      <AnimatedSection
+        animation="fadeUp"
+        className="section-padding bg-neutral-100"
+      >
         <div className="container-custom">
           {/* Header */}
-          <AnimatedSection animation="fadeUp" delay={100} className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <AnimatedSection
+            animation="fadeUp"
+            delay={100}
+            className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14"
+          >
             <div>
               <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">
                 Services
@@ -147,58 +180,56 @@ const Home = () => {
           </AnimatedSection>
 
           {/* Services Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" style={{ contain: 'layout style paint' }}>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service, index) => (
-              <AnimatedSection 
+              <AnimatedSection
                 key={service.slug}
-                animation="fadeUp" 
+                animation="fadeUp"
                 delay={index * 100}
                 className="h-full"
               >
                 <Link
                   to={`/services/${service.slug}`}
-                  className="group bg-neutral-400 rounded-2xl overflow-hidden border border-neutral-200 hover:border-neutral-300 hover:shadow-lg transition-shadow duration-300 shadow-sm flex flex-col h-full"
-                  style={{ contentVisibility: 'auto' }}
+                  className="group bg-white rounded-2xl overflow-hidden border border-neutral-200 hover:border-neutral-300 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col h-full"
                 >
-                {/* Image with hover overlay */}
-                <div className="relative h-44 sm:h-48 overflow-hidden flex-shrink-0 bg-neutral-300">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading={index < 3 ? "eager" : "lazy"}
-                    decoding="async"
-                    width={400}
-                    height={192}
-                    fetchPriority={index < 3 ? "high" : "low"}
-                    style={{ 
-                      willChange: 'transform',
-                      transform: 'translateZ(0)',
-                      imageRendering: 'auto'
-                    }}
-                  />
-                  {/* Colored overlay – slides/fades in on hover */}
-                  <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
-                    <span className="text-white font-semibold text-lg tracking-wide">
-                      Know more
-                    </span>
+                  {/* Image with hover overlay */}
+                  <div className="relative h-44 sm:h-48 overflow-hidden flex-shrink-0 bg-neutral-100">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 transform-gpu"
+                      loading={index < 3 ? "eager" : "lazy"}
+                      decoding="async"
+                      width={400}
+                      height={192}
+                      fetchpriority={index < 3 ? "high" : "low"}
+                    />
+                    {/* Colored overlay – slides/fades in on hover */}
+                    <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                      <span className="text-white font-semibold text-lg tracking-wide">
+                        Know more
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="font-semibold text-lg text-neutral-900 mb-2 group-hover:text-emerald-600 transition-colors duration-200">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-neutral-700 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </Link>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="font-semibold text-lg text-neutral-900 mb-2 group-hover:text-emerald-600 transition-colors duration-200">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-neutral-700 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </Link>
               </AnimatedSection>
             ))}
           </div>
 
           {/* Mobile CTA */}
-          <AnimatedSection animation="fadeUp" delay={300} className="mt-8 md:hidden text-center">
+          <AnimatedSection
+            animation="fadeUp"
+            delay={300}
+            className="mt-8 md:hidden text-center"
+          >
             <Link to="/services" className="btn-secondary">
               View All Services
               <ArrowUpRight className="ml-2" size={16} />
@@ -208,7 +239,10 @@ const Home = () => {
       </AnimatedSection>
 
       {/* ===== WHY CHOOSE US ===== */}
-      <AnimatedSection animation="fadeUp" className="section-padding bg-neutral-800 text-white">
+      <AnimatedSection
+        animation="fadeUp"
+        className="section-padding bg-neutral-800 text-white"
+      >
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Content */}
@@ -249,7 +283,11 @@ const Home = () => {
             </AnimatedSection>
 
             {/* Stats Card */}
-            <AnimatedSection animation="slideLeft" delay={200} className="bg-neutral-700 backdrop-blur rounded-3xl p-8 md:p-10 border border-neutral-600">
+            <AnimatedSection
+              animation="slideLeft"
+              delay={200}
+              className="bg-neutral-700 backdrop-blur rounded-3xl p-8 md:p-10 border border-neutral-600"
+            >
               <div className="grid grid-cols-2 gap-8">
                 {[
                   { value: "20+", label: "Years Experience" },
@@ -274,7 +312,11 @@ const Home = () => {
       <AnimatedSection animation="fadeUp" className="section-padding">
         <div className="container-custom">
           {/* Header */}
-          <AnimatedSection animation="fadeUp" delay={100} className="text-center mb-14">
+          <AnimatedSection
+            animation="fadeUp"
+            delay={100}
+            className="text-center mb-14"
+          >
             <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">
               Testimonials
             </p>
@@ -287,11 +329,11 @@ const Home = () => {
           {/* Testimonials Grid */}
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((item, index) => (
-              <AnimatedSection 
+              <AnimatedSection
                 key={index}
-                animation="fadeUp" 
+                animation="fadeUp"
                 delay={200 + index * 100}
-                className="card-elevated bg-neutral-400 text-neutral-800"
+                className="card-elevated bg-white text-neutral-800"
               >
                 {/* Rating */}
                 <div className="flex gap-1 mb-5">

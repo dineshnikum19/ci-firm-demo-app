@@ -52,21 +52,28 @@ const About = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero with Background Image */}
-      <AnimatedSection animation="fadeIn" className="relative py-24 md:py-32 overflow-hidden min-h-[300px] sm:min-h-[360px]">
+      <AnimatedSection
+        animation="fadeIn"
+        className="relative py-24 md:py-32 overflow-hidden min-h-[300px] sm:min-h-[360px]"
+      >
         <div className="absolute inset-0">
           <img
             src="/chart-peoples.jpg"
             alt="Modern office"
             className="img-cover"
-            fetchPriority="high"
+            fetchpriority="high"
             decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/50 to-transparent"></div>
         </div>
 
-        <AnimatedSection animation="fadeUp" delay={200} className="container-custom relative z-10">
+        <AnimatedSection
+          animation="fadeUp"
+          delay={200}
+          className="container-custom relative z-10"
+        >
           <div className="max-w-2xl">
             <AnimatedSection animation="fadeUp" delay={300}>
               <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-4">
@@ -118,7 +125,11 @@ const About = () => {
             </AnimatedSection>
 
             {/* Timeline */}
-            <AnimatedSection animation="slideLeft" delay={200} className="bg-neutral-200/60 rounded-2xl p-8">
+            <AnimatedSection
+              animation="slideLeft"
+              delay={200}
+              className="bg-neutral-200/60 rounded-2xl p-8"
+            >
               <h3 className="font-semibold text-neutral-900 mb-8">
                 Our Journey
               </h3>
@@ -158,7 +169,12 @@ const About = () => {
                 text: "Be the most trusted CA firm in Gujarat, known for excellence and innovation.",
               },
             ].map((item, index) => (
-              <AnimatedSection key={index} animation="fadeUp" delay={index * 150} className="card-elevated text-center">
+              <AnimatedSection
+                key={index}
+                animation="fadeUp"
+                delay={index * 150}
+                className="card-elevated text-center"
+              >
                 <div className="w-14 h-14 rounded-xl bg-neutral-200 flex items-center justify-center mx-auto mb-5">
                   <item.icon size={24} className="text-neutral-700" />
                 </div>
@@ -175,7 +191,11 @@ const About = () => {
       {/* Team with Photos */}
       <AnimatedSection animation="fadeUp" className="section-padding">
         <div className="container-custom">
-          <AnimatedSection animation="fadeUp" delay={100} className="text-center mb-14">
+          <AnimatedSection
+            animation="fadeUp"
+            delay={100}
+            className="text-center mb-14"
+          >
             <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">
               Team
             </p>
@@ -184,7 +204,12 @@ const About = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, index) => (
-              <AnimatedSection key={index} animation="fadeUp" delay={200 + index * 100} className="group">
+              <AnimatedSection
+                key={index}
+                animation="fadeUp"
+                delay={200 + index * 100}
+                className="group"
+              >
                 {/* Photo */}
                 <div className="relative mb-5 rounded-2xl overflow-hidden">
                   <img
@@ -221,9 +246,16 @@ const About = () => {
       </AnimatedSection>
 
       {/* Certifications */}
-      <AnimatedSection animation="fadeUp" className="section-padding bg-neutral-900 text-white">
+      <AnimatedSection
+        animation="fadeUp"
+        className="section-padding bg-neutral-900 text-white"
+      >
         <div className="container-custom">
-          <AnimatedSection animation="fadeUp" delay={100} className="text-center mb-12">
+          <AnimatedSection
+            animation="fadeUp"
+            delay={100}
+            className="text-center mb-12"
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Recognized & Certified
             </h2>
